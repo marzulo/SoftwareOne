@@ -1,0 +1,173 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API Gateway to operate with Lambda/Dynamo",
+    "version" : "2022-01-26T15:26:50Z",
+    "title" : "api_lambda_dynamo"
+  },
+  "host" : "fe4kj4a372.execute-api.eu-south-1.amazonaws.com",
+  "basePath" : "/demo",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/delete" : {
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "x-amazon-apigateway-any-method" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "json_payload",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "LambdaIntegrationInputModelDelete",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/LambdaIntegrationInputModelDelete"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/insert" : {
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "x-amazon-apigateway-any-method" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "json_payload",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "LambdaIntegrationUserInput",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/LambdaIntegrationUserInput"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/query" : {
+      "x-amazon-apigateway-any-method" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "json_payload",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "LambdaIntegrationInputModelDelete",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/LambdaIntegrationInputModelDelete"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty Schema"
+    },
+    "LambdaIntegrationUserInput" : {
+      "type" : "object",
+      "properties" : {
+        "productcode" : {
+          "type" : "string"
+        },
+        "productname" : {
+          "type" : "string"
+        },
+        "productprice" : {
+          "type" : "string"
+        }
+      },
+      "title" : "LambdaIntegrationInputModel"
+    },
+    "LambdaIntegrationInputModelDelete" : {
+      "type" : "object",
+      "properties" : {
+        "productcode" : {
+          "type" : "string"
+        },
+        "productname" : {
+          "type" : "string"
+        }
+      },
+      "title" : "LambdaIntegrationInputModelDelete"
+    }
+  }
+}

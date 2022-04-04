@@ -1,0 +1,4 @@
+nodejs_delete/node_modules
+nodejs_insert/node_modules
+nodejs_query/node_modules
+*/package-lock.json
